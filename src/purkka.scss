@@ -8,6 +8,7 @@ $sapphire: hsla(217, 74%, 37%, 1);
 $shocking-pink: hsla(318, 98%, 53%, 1);
 $platinum: hsla(0, 0%, 90%, 1);
 $white: hsla(0, 0%, 100%, 1);
+$black: hsla(0, 0%, 0%, 1);
 
 //Gradients
 $gradient-top: linear-gradient(0deg, #000000ff, #14213dff, #184ea4ff, #fc12b6ff, #e5e5e5ff, #ffffffff);
@@ -20,9 +21,15 @@ $gradient-top-left: linear-gradient(225deg, #000000ff, #14213dff, #184ea4ff, #fc
 $gradient-bottom-left: linear-gradient(315deg, #000000ff, #14213dff, #184ea4ff, #fc12b6ff, #e5e5e5ff, #ffffffff);
 $gradient-radial: radial-gradient(#000000ff, #14213dff, #184ea4ff, #fc12b6ff, #e5e5e5ff, #ffffffff);
 
-//my gradient
+//Title gradient
 $title-gradient: linear-gradient(45deg,$sapphire, $shocking-pink);
-//my gradient
+//Hover gradient
+$hover-gradient: linear-gradient(45deg,$shocking-pink, $sapphire);
+//Secondary gradient
+$secondary-gradient: linear-gradient(45deg, $oxford-blue, $sapphire);
+//Secondary gradient
+$secondary-hover-gradient: linear-gradient(45deg, $sapphire, $platinum);
+//Footer gradient
 $footer-gradient: linear-gradient(45deg, $platinum, $white);
 //Primary colors, padding and margin
 $primary-font: 'Slabo 27px', serif;
@@ -34,6 +41,7 @@ $primary-color: $shocking-pink;
 $secondary-color: $sapphire;
 $tertiary-color: $oxford-blue;
 $quaternary-color: $platinum;
+$disabled-color: $platinum;
 $vertical-padding: 0.5rem;
 $horizontal-padding: 0.5rem;
 $vertical-margin: 0.5rem;
@@ -42,15 +50,17 @@ $horizontal-margin: 0.5rem;
 $border-radius: 3px;
 $box-shadow: 0.4rem 0.4rem 3px 2px rgba($secondary-color, 0.1);
 
+$transition: all 0.2s ease-in-out;
+
 ///////////////////////////
 
 :root {
   --my-variable: brown;
 }
-
-//CARD
-/////////////////////
-.card-container {
+//////////////
+//CONTAINER
+//////////////
+.container {
   display:flex;
   justify-content: center;
   align-items: center;
@@ -58,7 +68,82 @@ $box-shadow: 0.4rem 0.4rem 3px 2px rgba($secondary-color, 0.1);
   margin: $vertical-margin $horizontal-margin;
   padding: $vertical-padding $horizontal-padding;
 }
+/////////////////////
+//Button
+/////////////////////
+.btn {
+  justify-content: center;
+  align-items: center;
+  margin: $vertical-margin $horizontal-margin;
+  padding: $vertical-padding $horizontal-padding;
+  border: 2px solid $tertiary-color;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+}
 
+.btn:hover:enabled {
+  cursor: pointer;
+}
+
+.btn:disabled {
+  opacity: 0.4;
+  background-color: $disabled-color;
+}
+
+.btn-primary {
+  color: $white;
+  font-family: $primary-font;
+  font-size: 1.2rem;
+  width: 100%;
+  background: $primary-color;
+  transition: $transition;
+}
+
+.btn-primary:hover:enabled {
+  background: rgba($primary-color, 0.8);
+}
+
+.btn-secondary {
+  color: $white;
+  font-family: $primary-font;
+  font-size: 1.2rem;
+  width: 100%;
+  background: $secondary-color;
+  transition: $transition;
+}
+
+.btn-secondary:hover:enabled {
+  background: rgba($secondary-color, 0.8);
+}
+
+.btn-tertiary {
+  color: $white;
+  font-family: $primary-font;
+  font-size: 1.2rem;
+  width: 100%;
+  background: $tertiary-color;
+  transition: $transition;
+}
+
+.btn-tertiary:hover:enabled {
+  background: rgba($tertiary-color, 0.8);
+}
+
+.btn-quaternary {
+  color: $black;
+  font-family: $primary-font;
+  font-size: 1.2rem;
+  width: 100%;
+  background: $quaternary-color;
+  transition: $transition;
+}
+
+.btn-quaternary:hover:enabled {
+  background: rgba($quaternary-color, 0.2);
+}
+/////////////////////
+//CARD
+/////////////////////
 .card {
   margin: $vertical-margin $horizontal-margin;
   padding: 0 $horizontal-padding;
@@ -72,7 +157,6 @@ $box-shadow: 0.4rem 0.4rem 3px 2px rgba($secondary-color, 0.1);
 }
 .card-title {
   padding: $vertical-padding $horizontal-padding;
-  background-color: $primary-color;
   color: $white;
   font-family: $primary-font;
   font-size: 1.2rem;
@@ -91,5 +175,4 @@ $box-shadow: 0.4rem 0.4rem 3px 2px rgba($secondary-color, 0.1);
   width: 100%;
   font-family: $secondary-font;
 }
-
 /////////////////////

@@ -20,8 +20,14 @@ $gradient-top-left: linear-gradient(225deg, #000000ff, #14213dff, #184ea4ff, #fc
 $gradient-bottom-left: linear-gradient(315deg, #000000ff, #14213dff, #184ea4ff, #fc12b6ff, #e5e5e5ff, #ffffffff);
 $gradient-radial: radial-gradient(#000000ff, #14213dff, #184ea4ff, #fc12b6ff, #e5e5e5ff, #ffffffff);
 
+//my gradient
+$title-gradient: linear-gradient(45deg,$sapphire, $shocking-pink);
+//my gradient
+$footer-gradient: linear-gradient(45deg, $platinum, $white);
 //Primary colors, padding and margin
-$primary-font:    Helvetica, sans-serif;
+$primary-font: 'Slabo 27px', serif;
+$secondary-font: 'Montserrat', serif;
+
 $text-color: $black;
 $text-secondary-color: $platinum;
 $primary-color: $shocking-pink;
@@ -33,6 +39,9 @@ $horizontal-padding: 0.5rem;
 $vertical-margin: 0.5rem;
 $horizontal-margin: 0.5rem;
 
+$border-radius: 3px;
+$box-shadow: 0.4rem 0.4rem 3px 2px rgba($secondary-color, 0.1);
+
 ///////////////////////////
 
 :root {
@@ -41,18 +50,46 @@ $horizontal-margin: 0.5rem;
 
 //CARD
 /////////////////////
-.card {
+.card-container {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
   margin: $vertical-margin $horizontal-margin;
   padding: $vertical-padding $horizontal-padding;
 }
-.card-title {
 
+.card {
+  margin: $vertical-margin $horizontal-margin;
+  padding: 0 $horizontal-padding;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 2px solid $tertiary-color;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+}
+.card-title {
+  padding: $vertical-padding $horizontal-padding;
+  background-color: $primary-color;
+  color: $white;
+  font-family: $primary-font;
+  font-size: 1.2rem;
+  width: 100%;
+  background: $title-gradient;
 }
 .card-body {
-
+  width: 100%;
+  margin: $vertical-margin $horizontal-margin;
+  padding: $vertical-padding $horizontal-padding;
+  font-family: $secondary-font;
 }
 .card-footer {
-
+  padding: $vertical-padding $horizontal-padding;
+  background-color: $quaternary-color;
+  width: 100%;
+  font-family: $secondary-font;
 }
 
 /////////////////////

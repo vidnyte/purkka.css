@@ -1,0 +1,58 @@
+//Setting up variables
+//////////////////////////
+
+//Colors
+$black: hsla(0, 0%, 0%, 1);
+$oxford-blue: hsla(221, 51%, 16%, 1);
+$sapphire: hsla(217, 74%, 37%, 1);
+$shocking-pink: hsla(318, 98%, 53%, 1);
+$platinum: hsla(0, 0%, 90%, 1);
+$white: hsla(0, 0%, 100%, 1);
+
+//Gradients
+$gradient-top: linear-gradient(0deg, #000000ff, #14213dff, #184ea4ff, #fc12b6ff, #e5e5e5ff, #ffffffff);
+$gradient-right: linear-gradient(90deg, #000000ff, #14213dff, #184ea4ff, #fc12b6ff, #e5e5e5ff, #ffffffff);
+$gradient-bottom: linear-gradient(180deg, #000000ff, #14213dff, #184ea4ff, #fc12b6ff, #e5e5e5ff, #ffffffff);
+$gradient-left: linear-gradient(270deg, #000000ff, #14213dff, #184ea4ff, #fc12b6ff, #e5e5e5ff, #ffffffff);
+$gradient-top-right: linear-gradient(45deg, #000000ff, #14213dff, #184ea4ff, #fc12b6ff, #e5e5e5ff, #ffffffff);
+$gradient-bottom-right: linear-gradient(135deg, #000000ff, #14213dff, #184ea4ff, #fc12b6ff, #e5e5e5ff, #ffffffff);
+$gradient-top-left: linear-gradient(225deg, #000000ff, #14213dff, #184ea4ff, #fc12b6ff, #e5e5e5ff, #ffffffff);
+$gradient-bottom-left: linear-gradient(315deg, #000000ff, #14213dff, #184ea4ff, #fc12b6ff, #e5e5e5ff, #ffffffff);
+$gradient-radial: radial-gradient(#000000ff, #14213dff, #184ea4ff, #fc12b6ff, #e5e5e5ff, #ffffffff);
+
+//Primary colors, padding and margin
+$primary-font:    Helvetica, sans-serif;
+$text-color: $black;
+$text-secondary-color: $platinum;
+$primary-color: $shocking-pink;
+$secondary-color: $sapphire;
+$tertiary-color: $oxford-blue;
+$quaternary-color: $platinum;
+$vertical-padding: 0.5rem;
+$horizontal-padding: 0.5rem;
+$vertical-margin: 0.5rem;
+$horizontal-margin: 0.5rem;
+
+///////////////////////////
+
+:root {
+  --my-variable: brown;
+}
+
+//CARD
+/////////////////////
+.card {
+  margin: $vertical-margin $horizontal-margin;
+  padding: $vertical-padding $horizontal-padding;
+}
+.card-title {
+
+}
+.card-body {
+
+}
+.card-footer {
+
+}
+
+/////////////////////

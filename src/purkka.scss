@@ -9,6 +9,11 @@ $shocking-pink: hsla(318, 98%, 53%, 1);
 $platinum: hsla(0, 0%, 90%, 1);
 $white: hsla(0, 0%, 100%, 1);
 $black: hsla(0, 0%, 0%, 1);
+$green: #19a451;
+$yellow: #fdf612;
+$orange: #ff8100;
+$red: #ef0101;
+$peach: #ff7979;
 
 //Gradients
 $gradient-top: linear-gradient(0deg, #000000ff, #14213dff, #184ea4ff, #fc12b6ff, #e5e5e5ff, #ffffffff);
@@ -31,6 +36,12 @@ $secondary-gradient: linear-gradient(45deg, $oxford-blue, $sapphire);
 $secondary-hover-gradient: linear-gradient(45deg, $sapphire, $platinum);
 //Footer gradient
 $footer-gradient: linear-gradient(45deg, $platinum, $white);
+//success gradient
+$success-gradient: linear-gradient(45deg, $green, $yellow);
+//warning gradient
+$warning-gradient: linear-gradient(45deg, $orange, $yellow);
+//danger gradient
+$danger-gradient: linear-gradient(45deg, $red, $peach);
 //Primary colors, padding and margin
 $primary-font: 'Slabo 27px', serif;
 $secondary-font: 'Montserrat', serif;
@@ -50,6 +61,9 @@ $horizontal-margin: 0.5rem;
 $border-radius: 3px;
 $box-shadow: 0.4rem 0.4rem 3px 2px rgba($secondary-color, 0.1);
 
+$grid-gap: 1.5rem;
+$grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+
 $transition: all 0.2s ease-in-out;
 
 ///////////////////////////
@@ -57,16 +71,38 @@ $transition: all 0.2s ease-in-out;
 :root {
   --my-variable: brown;
 }
+
+h1, h2, h3, h4, h5 {
+  font-family: $primary-font;
+}
+p {
+  font-family: $secondary-font;
+}
 //////////////
 //CONTAINER
 //////////////
-.container {
+.container-flex {
   display:flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   margin: $vertical-margin $horizontal-margin;
   padding: $vertical-padding $horizontal-padding;
+}
+
+.container-grid {
+  display:grid;
+  justify-content: center;
+  grid-template-columns: $grid-template-columns;
+  grid-gap: $grid-gap;
+  align-items: center;
+  flex-direction: row;
+  margin: $vertical-margin $horizontal-margin;
+  padding: $vertical-padding $horizontal-padding;
+}
+
+.grid-item {
+  grid-column: span 1;
 }
 /////////////////////
 //Button
@@ -79,10 +115,13 @@ $transition: all 0.2s ease-in-out;
   border: 2px solid $tertiary-color;
   border-radius: $border-radius;
   box-shadow: $box-shadow;
+  grid-column: span 1;
+  transition: all 0.2s ease-out;
 }
 
 .btn:hover:enabled {
   cursor: pointer;
+  transform: translateY(-0.25rem)
 }
 
 .btn:disabled {
@@ -148,12 +187,18 @@ $transition: all 0.2s ease-in-out;
   margin: $vertical-margin $horizontal-margin;
   padding: 0 $horizontal-padding;
   display: flex;
+  grid-column: span 1;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   border: 2px solid $tertiary-color;
   border-radius: $border-radius;
   box-shadow: $box-shadow;
+  transition: all 0.2s ease-out;
+}
+
+.card:hover {
+  transform: translateY(-0.5rem)
 }
 .card-title {
   padding: $vertical-padding $horizontal-padding;
@@ -162,6 +207,18 @@ $transition: all 0.2s ease-in-out;
   font-size: 1.2rem;
   width: 100%;
   background: $title-gradient;
+}
+
+.card-success {
+  background: $success-gradient;
+}
+
+.card-warning {
+  background: $warning-gradient;
+}
+
+.card-danger {
+  background: $danger-gradient;
 }
 .card-body {
   width: 100%;

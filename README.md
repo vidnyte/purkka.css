@@ -3,6 +3,7 @@
 # Purkka.css
 Small, responsive and clean CSS framework for quick prototyping.
 Made with SASS. Edit the css variables to customize it for your use case!
+This project is still a work in progress. :)
 
 ## Installing
 Download the purkka.css file and link it as a stylesheet in the head of your html file.

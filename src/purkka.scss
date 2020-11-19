@@ -391,6 +391,11 @@ input[type=text]:focus {
 /////////////////////
 //Navigation Bar
 /////////////////////
+.nav-logo-image {
+  width: 50px;
+  height: 40px;
+}
+
 .header {
   background-color: $white;
   box-shadow: $box-shadow;
@@ -428,13 +433,15 @@ input[type=text]:focus {
 }
 
 .header .nav-logo {
-  display: block;
   font-family: $primary-font;
   font-size: 1.8rem;
   font-weight: bolder;
   padding: $vertical-padding $horizontal-padding*2;
   text-decoration: none;
   float: left;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .header .nav-menu {
@@ -506,7 +513,7 @@ input[type=text]:focus {
   top: 0;
 }
 
-@media (min-width: 48em) {
+@media (min-width: 40rem) {
   .header li {
     float: left;
   }
